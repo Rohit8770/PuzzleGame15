@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="@dimen/_5ssp"
+    android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/_7ssp"
+        android:elevation="@dimen/_5ssp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <ImageView
+                android:layout_width="@dimen/_20ssp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_30ssp"
+                android:layout_height="@dimen/_30ssp"
+                android:src="@drawable/watch_later_24"/>
+        <TextView
+            android:id="@+id/txTime1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/_10ssp"
+            android:hint="Time"
+            android:textSize="@dimen/_16ssp"/>
+            <ImageView
+                android:layout_width="@dimen/_20ssp"
+                android:layout_gravity="center"
+                android:layout_height="@dimen/_30ssp"
+                android:layout_marginLeft="@dimen/_80ssp"
+                android:src="@drawable/move_up_24"/>
+            <TextView
+                android:id="@+id/txMove1"
+                android:layout_width="wrap_content"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/_10ssp"
+                android:hint="Time"
+                android:textSize="@dimen/_16ssp"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="OK"
+        android:id="@+id/btnOK"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_16ssp" />
+</LinearLayout>

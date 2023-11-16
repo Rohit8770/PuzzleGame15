@@ -1,0 +1,872 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:orientation="vertical"
+android:layout_height="match_parent"
+tools:context=".puzzle.PuzzleActivity">
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/_50ssp"
+    android:layout_margin="@dimen/_15ssp"
+    app:cardCornerRadius="@dimen/_3ssp"
+    android:backgroundTint="@color/ad2"
+    android:elevation="@dimen/_3ssp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Say Hlo!  ,  "
+            android:fontFamily="@font/sofia_pro_semi_bold_italic"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"/>
+        <TextView
+            android:id="@+id/TextViewName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="  this is your_name"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"/>
+        <LinearLayout
+            android:layout_marginLeft="@dimen/_5ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ImageId"
+                android:layout_width="70dp"
+                android:layout_height="@dimen/_45ssp"
+                android:src="@drawable/man" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+
+
+<LinearLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/_25ssp"
+    android:layout_margin="@dimen/_17ssp"
+    android:orientation="vertical"
+    android:weightSum="2">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txTimer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Time "
+            android:fontFamily="@font/sofia_pro_semi_bold_italic"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1">
+        <TextView
+            android:id="@+id/txMove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Step"
+            android:fontFamily="@font/sofia_pro_semi_bold_italic"
+            android:textColor="#000000"
+            android:textSize="24sp" />
+    </LinearLayout>
+</LinearLayout>
+
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_marginTop="-55sp"
+    android:layout_gravity="end"
+    android:layout_marginRight="@dimen/_10ssp"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnWin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WIN"
+        android:backgroundTint="@color/light1"
+        android:fontFamily="@font/sofia_pro_semi_bold_italic"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+</RelativeLayout>
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_marginTop="@dimen/_55sdp"
+    android:backgroundTint="@color/orange"
+    android:elevation="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_10sdp">
+
+    <GridLayout
+        android:id="@+id/group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:padding="@dimen/_5sdp"
+        android:rowCount="3">
+
+        <Button
+            android:id="@+id/btn1"
+            style="@style/ButtonStyle"
+            android:layout_width="@dimen/_18ssp"
+            android:layout_height="match_parent"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/btn_item"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="1"
+            android:textSize="@dimen/_25sdp"
+            android:textStyle="bold"
+            android:tag="00"/>
+
+        <Button
+            android:id="@+id/btn2"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/btn_item"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="2"
+            android:tag="01"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn3"
+            android:tag="02"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:background="@drawable/btn_item"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="3"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn4"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:background="@drawable/btn_item"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="4"
+            android:tag="10"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn5"
+            style="@style/ButtonStyle"
+            android:background="@drawable/btn_item"
+            android:layout_width="18dp"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:tag="11"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="5"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn6"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:background="@drawable/btn_item"
+            android:layout_margin="@dimen/_2sdp"
+            android:tag="12"
+            android:text="6"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn7"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:tag="20"
+            android:layout_height="78dp"
+            android:background="@drawable/btn_item"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="7"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn8"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:background="@drawable/btn_item"
+            android:layout_columnWeight="1"
+            android:tag="21"
+            android:layout_margin="@dimen/_2sdp"
+            android:text="8"
+            android:textSize="@dimen/_25sdp" />
+
+        <Button
+            android:id="@+id/btn9"
+            style="@style/ButtonStyle"
+            android:layout_width="18dp"
+            android:tag="22"
+            android:background="@drawable/btn_item"
+            android:layout_height="78dp"
+            android:layout_rowWeight="1"
+            android:layout_columnWeight="1"
+            android:layout_margin="@dimen/_2sdp"
+            android:text=""
+            android:textSize="@dimen/_25sdp" />
+    </GridLayout>
+
+</androidx.cardview.widget.CardView>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_marginTop="@dimen/_65ssp"
+    android:layout_gravity="end"
+    android:layout_marginRight="@dimen/_50ssp"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnShuffle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Shuffle"
+        android:backgroundTint="@color/light1"
+        android:fontFamily="@font/sofia_pro_semi_bold"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+</RelativeLayout>
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_marginTop="-55sp"
+    android:layout_marginLeft="50dp"
+    android:layout_height="wrap_content">
+    <Button
+        android:id="@+id/btnStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="STOP"
+        android:backgroundTint="@color/light1"
+        android:fontFamily="@font/sofia_pro_semi_bold"
+        android:textColor="@color/white"
+        android:textSize="24sp" />
+</RelativeLayout>
+
+
+
+
+
+</LinearLayout>
+
+<!--<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".puzzle.PuzzleActivity">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_50ssp"
+        android:layout_margin="@dimen/_15ssp"
+        app:cardCornerRadius="@dimen/_3ssp"
+        android:backgroundTint="@color/ad2"
+        android:elevation="@dimen/_3ssp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=" Say Hlo!  ,  "
+            android:fontFamily="@font/sofia_pro_semi_bold_italic"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15ssp"/>
+    <TextView
+        android:id="@+id/TextViewName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="  this is your_name"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_16ssp"/>
+        <LinearLayout
+            android:layout_marginLeft="@dimen/_5ssp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/ImageId"
+        android:layout_width="70dp"
+        android:layout_height="@dimen/_45ssp"
+        android:src="@drawable/man" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_25ssp"
+        android:layout_margin="@dimen/_17ssp"
+        android:orientation="vertical"
+        android:weightSum="2">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+
+            <TextView
+                android:id="@+id/txTimer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Time "
+                android:fontFamily="@font/sofia_pro_semi_bold_italic"
+                android:textColor="#000000"
+                android:textSize="24sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="@dimen/_10ssp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1">
+                <TextView
+                    android:id="@+id/txMove"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Step"
+                    android:fontFamily="@font/sofia_pro_semi_bold_italic"
+                    android:textColor="#000000"
+                    android:textSize="24sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="-55sp"
+        android:layout_gravity="end"
+        android:layout_marginRight="@dimen/_10ssp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnWin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WIN"
+            android:backgroundTint="@color/light1"
+            android:fontFamily="@font/sofia_pro_semi_bold_italic"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/_55sdp"
+        android:backgroundTint="@color/orange"
+        android:elevation="@dimen/_5sdp"
+        app:cardCornerRadius="@dimen/_10sdp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".puzzle.PuzzleActivity">
+
+            &lt;!&ndash; Puzzle grid goes here &ndash;&gt;
+            <GridLayout
+                android:id="@+id/group"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:columnCount="3"
+                android:rowCount="3">
+
+                &lt;!&ndash; Button 1 (Top Left) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="1"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:tag="00" />
+
+                &lt;!&ndash; Button 2 (Top Center) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="2"
+                    android:textSize="24sp"
+                    android:tag="01" />
+
+                &lt;!&ndash; Button 3 (Top Right) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="3"
+                    android:textSize="24sp"
+                    android:tag="02" />
+
+                &lt;!&ndash; Button 4 (Middle Left) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn4"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="4"
+                    android:textSize="24sp"
+                    android:tag="10" />
+
+                &lt;!&ndash; Button 5 (Middle Center) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn5"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="5"
+                    android:textSize="24sp"
+                    android:tag="11" />
+
+                &lt;!&ndash; Button 6 (Middle Right) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn6"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="6"
+                    android:textSize="24sp"
+                    android:tag="12" />
+
+                &lt;!&ndash; Button 7 (Bottom Left) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn7"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="7"
+                    android:textSize="24sp"
+                    android:tag="20" />
+
+                &lt;!&ndash; Button 8 (Bottom Center) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn8"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text="8"
+                    android:textSize="24sp"
+                    android:tag="21" />
+
+                &lt;!&ndash; Button 9 (Bottom Right) &ndash;&gt;
+                <Button
+                    android:id="@+id/btn9"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_rowWeight="1"
+                    android:layout_columnWeight="1"
+                    android:background="@drawable/btn_item"
+                    android:text=""
+                    android:textSize="24sp"
+                    android:tag="22" />
+            </GridLayout>
+
+            &lt;!&ndash; Other UI elements (timer, moves, buttons, etc.) can be added here &ndash;&gt;
+
+        </RelativeLayout>
+
+
+    </androidx.cardview.widget.CardView>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/_65ssp"
+        android:layout_gravity="end"
+        android:layout_marginRight="@dimen/_50ssp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnShuffle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Shuffle"
+            android:backgroundTint="@color/light1"
+            android:fontFamily="@font/sofia_pro_semi_bold"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_marginTop="-55sp"
+        android:layout_marginLeft="50dp"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btnStop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STOP"
+            android:backgroundTint="@color/light1"
+            android:fontFamily="@font/sofia_pro_semi_bold"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </RelativeLayout>
+
+
+
+
+
+</LinearLayout>-->
+    <!-- <RelativeLayout
+         android:id="@+id/group"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:orientation="vertical"
+         android:padding="@dimen/_5ssp"
+         android:background="@color/orange"
+         android:layout_marginTop="@dimen/_40ssp"
+         android:layout_gravity="center">
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:orientation="horizontal"
+         android:gravity="center"
+         android:layout_height="wrap_content">
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn1"
+                 android:tag="00"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:backgroundTint="@color/light1"
+                 android:text="1"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:layout_marginLeft="@dimen/_4ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn2"
+                 android:tag="01"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:backgroundTint="@color/light1"
+                 android:text="2"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1"
+             android:layout_marginLeft="@dimen/_4ssp">
+             <Button
+                 android:id="@+id/btn3"
+                 android:tag="02"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:text="3"
+                 android:backgroundTint="@color/light1"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn4"
+                 android:tag="03"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:backgroundTint="@color/light1"
+                 android:text="4"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:orientation="horizontal"
+         android:gravity="center"
+         android:layout_marginTop="@dimen/_75sdp"
+         android:layout_height="wrap_content">
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn5"
+                 android:tag="10"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:backgroundTint="@color/light1"
+                 android:gravity="center"
+                 android:text="5"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:layout_marginLeft="@dimen/_4ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn6"
+                 android:tag="21"
+                 android:layout_width="match_parent"
+                 android:backgroundTint="@color/light1"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:text="6"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:layout_marginLeft="@dimen/_4ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn7"
+                 android:tag="22"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:text="7"
+                 android:textColor="@color/white"
+                 android:backgroundTint="@color/light1"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:layout_marginLeft="@dimen/_4ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn8"
+                 android:tag="22"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:text="8"
+                 android:textColor="@color/white"
+                 android:backgroundTint="@color/light1"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+     </LinearLayout>
+
+     <LinearLayout
+         android:layout_width="wrap_content"
+         android:orientation="horizontal"
+         android:gravity="center"
+         android:layout_marginTop="@dimen/_150sdp"
+         android:layout_height="wrap_content">
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1">
+             <Button
+                 android:id="@+id/btn9"
+                 android:tag="30"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:backgroundTint="@color/light1"
+                 android:text="9"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1"
+             android:layout_marginLeft="@dimen/_4ssp">
+             <Button
+                 android:id="@+id/btn10"
+                 android:tag="31"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:text="10"
+                 android:textColor="@color/white"
+                 android:backgroundTint="@color/light1"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1"
+             android:layout_marginLeft="@dimen/_4ssp">
+             <Button
+                 android:id="@+id/btn11"
+                 android:tag="32"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:backgroundTint="@color/light1"
+                 android:text="11"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+         <androidx.cardview.widget.CardView
+             android:layout_width="@dimen/_70ssp"
+             android:layout_height="@dimen/_70ssp"
+             android:backgroundTint="@color/light1"
+             android:layout_marginLeft="@dimen/_4ssp">
+             <Button
+                 android:id="@+id/btn12"
+                 android:tag="32"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:gravity="center"
+                 android:backgroundTint="@color/light1"
+                 android:text="12"
+                 android:textColor="@color/white"
+                 android:textStyle="bold"
+                 android:textSize="@dimen/_25ssp"/>
+         </androidx.cardview.widget.CardView>
+
+     </LinearLayout>
+         <LinearLayout
+             android:layout_width="wrap_content"
+             android:orientation="horizontal"
+             android:gravity="center"
+             android:layout_marginTop="@dimen/_225sdp"
+             android:layout_height="wrap_content">
+             <androidx.cardview.widget.CardView
+                 android:layout_width="@dimen/_70ssp"
+                 android:layout_height="@dimen/_70ssp"
+                 android:backgroundTint="@color/light1">
+                 <Button
+                     android:id="@+id/btn13"
+                     android:tag="20"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:backgroundTint="@color/light1"
+                     android:gravity="center"
+                     android:text="13"
+                     android:textColor="@color/white"
+                     android:textStyle="bold"
+                     android:textSize="@dimen/_25ssp"/>
+             </androidx.cardview.widget.CardView>
+             <androidx.cardview.widget.CardView
+                 android:layout_width="@dimen/_70ssp"
+                 android:layout_height="@dimen/_70ssp"
+                 android:layout_marginLeft="@dimen/_4ssp"
+                 android:backgroundTint="@color/light1">
+                 <Button
+                     android:id="@+id/btn14"
+                     android:tag="21"
+                     android:layout_width="match_parent"
+                     android:backgroundTint="@color/light1"
+                     android:layout_height="match_parent"
+                     android:gravity="center"
+                     android:text="14"
+                     android:textColor="@color/white"
+                     android:textStyle="bold"
+                     android:textSize="@dimen/_25ssp"/>
+             </androidx.cardview.widget.CardView>
+             <androidx.cardview.widget.CardView
+                 android:layout_width="@dimen/_70ssp"
+                 android:layout_height="@dimen/_70ssp"
+                 android:layout_marginLeft="@dimen/_4ssp"
+                 android:backgroundTint="@color/light1">
+                 <Button
+                     android:id="@+id/btn15"
+                     android:tag="22"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:gravity="center"
+                     android:text="15"
+                     android:textColor="@color/white"
+                     android:backgroundTint="@color/light1"
+                     android:textStyle="bold"
+                     android:textSize="@dimen/_25ssp"/>
+             </androidx.cardview.widget.CardView>
+             <androidx.cardview.widget.CardView
+                 android:layout_width="@dimen/_70ssp"
+                 android:layout_height="@dimen/_70ssp"
+                 android:layout_marginLeft="@dimen/_4ssp"
+                 android:backgroundTint="@color/light1">
+                 <Button
+                     android:id="@+id/btn16"
+                     android:tag="22"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:gravity="center"
+                     android:text=""
+                     android:textColor="@color/white"
+                     android:backgroundTint="@color/light1"
+                     android:textStyle="bold"
+                     android:textSize="@dimen/_25ssp"/>
+             </androidx.cardview.widget.CardView>
+         </LinearLayout>
+     </RelativeLayout>-->

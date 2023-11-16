@@ -1,0 +1,19 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.PuzzleGame15" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+    </style>
+
+    <style name="Theme.PuzzleGame15" parent="Base.Theme.PuzzleGame15" />
+
+
+    <style name="ButtonStyle">
+        <item name="android:layout_width">@dimen/_60sdp</item>
+        <item name="android:layout_height">@dimen/_60sdp</item>
+        <item name="android:onClick">buttonClick</item>
+        <item name="backgroundTint">@color/light1</item>
+        <item name="background">@drawable/btn_item</item>
+    </style>
+
+</resources>

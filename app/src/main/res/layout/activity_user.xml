@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/_4ssp"
+    tools:context=".puzzle.UserActivity">
+
+    <ImageView
+        android:layout_width="72dp"
+        android:layout_height="71dp"
+        android:fontFamily="@font/sofia_pro_semi_bold"
+        android:src="@drawable/logo"
+        android:textColor="@color/black"
+        android:textSize="19sp" />
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:id="@+id/btnHigh"
+            android:layout_width="@dimen/_95sdp"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/_30ssp"
+            android:gravity="center"
+            android:background="@drawable/button_signup">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/sofia_pro_semi_bold"
+                android:text="  HighScore  "
+                android:textColor="@color/white"
+                android:textSize="19sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/_5ssp"
+            android:fontFamily="@font/sofia_pro_semi_bold"
+            android:src="@drawable/arrow_forward_ios_24"
+            android:textColor="@color/black"
+            android:textSize="19sp" />
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/txSwipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_100ssp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvUser"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAddData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/_10ssp"
+        android:layout_marginTop="@dimen/_10ssp"
+        android:layout_marginEnd="@dimen/_10ssp"
+        android:layout_marginBottom="@dimen/_10ssp"
+        android:backgroundTint="@color/green1"
+        android:src="@drawable/add"
+        android:textColor="@color/green1"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+
+
+</RelativeLayout>

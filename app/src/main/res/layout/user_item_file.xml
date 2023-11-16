@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="@dimen/_9ssp"
+    android:orientation="vertical"
+    android:layout_height="wrap_content">
+
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="@dimen/_80ssp"
+            android:elevation="@dimen/_7ssp"
+            app:cardCornerRadius="@dimen/_10ssp"
+            android:backgroundTint="@color/white">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_marginTop="@dimen/_5ssp"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgtx"
+                    android:layout_width="84dp"
+                    android:layout_height="60dp"
+                    android:src="@drawable/man" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/_5ssp"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_16ssp"
+                    android:text="Name   :"/>
+                <TextView
+            android:id="@+id/txName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/_5sdp"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_16ssp"
+            android:text="  User_Name"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginTop="@dimen/_20ssp"
+                    android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imgDelete"
+                            android:layout_width="@dimen/_35ssp"
+                            android:layout_height="@dimen/_40ssp"
+                            android:src="@drawable/delete"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_height="wrap_content">
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:layout_width="84dp"
+                            android:layout_height="60dp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textColor="@color/black"
+                            android:layout_marginLeft="@dimen/_5ssp"
+                            android:layout_marginTop="@dimen/_30ssp"
+                            android:textSize="@dimen/_16ssp"
+                            android:text="Score   :"/>
+                        <TextView
+                            android:id="@+id/Score"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingStart="@dimen/_5sdp"
+                            android:textColor="@color/black"
+                            android:layout_marginTop="@dimen/_30ssp"
+                            android:textSize="@dimen/_16ssp"
+                            android:text="  0"/>
+                </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="@dimen/_25ssp"
+            android:elevation="@dimen/_15ssp"
+            android:layout_marginRight="@dimen/_100ssp"
+            android:layout_marginTop="@dimen/_70ssp"
+            android:layout_height="wrap_content">
+                <LinearLayout
+                    android:id="@+id/btnSubmit"
+                    android:layout_width="@dimen/_75sdp"
+                    android:layout_gravity="center"
+                    android:layout_height="@dimen/_30ssp"
+                    android:gravity="center"
+                    android:background="@drawable/button_signup">
+                        <TextView
+                            android:id="@+id/txPlay"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/sofia_pro_semi_bold"
+                            android:text="  PLAY "
+                            android:textColor="@color/white"
+                            android:textSize="19sp" />
+                </LinearLayout>
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="@dimen/_35ssp"
+            app:cardCornerRadius="@dimen/_25ssp"
+            android:elevation="@dimen/_15ssp"
+            android:layout_marginTop="@dimen/_66ssp"
+            android:layout_height="@dimen/_36ssp">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                        <ImageView
+                            android:id="@+id/imgView"
+                            android:layout_width="50dp"
+                            android:layout_marginTop="-1sp"
+                            android:layout_marginLeft="@dimen/_4ssp"
+                            android:layout_height="69dp"
+                            android:src="@drawable/view" />
+                </RelativeLayout>
+        </androidx.cardview.widget.CardView>
+
+
+
+
+</RelativeLayout>
